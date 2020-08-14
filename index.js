@@ -1,7 +1,5 @@
 const { WebClient } = require("@slack/web-api");
-const web = new WebClient(
-  "xoxb-16231298692-1274697475249-Sal7SKXRr3aWetiJEUiocqv4"
-);
+const web = new WebClient();
 
 const conversationId = "G01922M7EG4";
 

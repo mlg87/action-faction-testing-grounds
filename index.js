@@ -2,6 +2,12 @@ const { WebClient } = require("@slack/web-api");
 require("dotenv").config();
 const web = new WebClient(process.env.SLACK_BOT_TOKEN);
 
+const reactionMap = {
+  commented: "speech_balloon",
+  approved: "white_check_mark",
+  "changes-requested": "octagonal_sign",
+};
+
 const conversationId = "G01922M7EG4";
 
 (async () => {
@@ -23,5 +29,16 @@ const conversationId = "G01922M7EG4";
     channel: conversationId,
     timestamp: "1597439544.023300",
   });
+
+  const reactionToAdd = reactionMap["commented"];
+
+  res.message.reactions.forEach((reaction) => {
+    if (reaction.name === reactionToAdd) {
+      console.log("reaction already added, returning");
+
+      return null;
+    }
+  });
+
   console.log("res.message.reactions", res.message.reactions);
 })();

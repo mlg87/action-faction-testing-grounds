@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Send slack notifications to requested reviewers
         id: pr-slack-notify
-        uses: mlg87/pr-reviewer-slack-notify-action@v2.0.1
+        uses: mlg87/pr-reviewer-slack-notify-action@v2.0.2
         with:
           channel-webhook: ${{ secrets.CHANNEL_SLACK_WEBHOOK }}
           slack-users: '[{ "github_username": "mlg87", "slack_id": "UM5ES016W" }, { "github_username": "blakeworsley", "slack_id": "UHE4AUCFN" }, { "github_username": "roblg35", "slack_id": "U014A6L4J5N" }, { "github_username": "staciewilhelm", "slack_id": "UMK3ZJMLN" }, { "github_username": "tessaleemorse", "slack_id": "UTVB80JVC" }, { "github_username": "edbarnesG", "slack_id": "U87SMBL9Y" }, { "github_username": "radean0909", "slack_id": "U013SGN5MA8" }]'

@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Send slack notifications to requested reviewers
         id: pr-slack-notify
-        uses: mlg87/pr-reviewer-slack-notify-action@v3.0.24
+        uses: mlg87/pr-reviewer-slack-notify-action@v3.0.25
         with:
           bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel-id: "G01922M7EG4"

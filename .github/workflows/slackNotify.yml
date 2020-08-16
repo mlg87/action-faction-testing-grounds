@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Send slack notifications to requested reviewers
         id: pr-slack-notify
-        uses: mlg87/pr-reviewer-slack-notify-action@v4.0.3
+        uses: mlg87/pr-reviewer-slack-notify-action@v4.0.4
         with:
           base-branch: "master"
           bot-token: ${{ secrets.SLACK_BOT_TOKEN }}

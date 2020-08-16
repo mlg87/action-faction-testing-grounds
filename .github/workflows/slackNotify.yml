@@ -4,6 +4,7 @@ on:
     types: [opened, ready_for_review]
   pull_request_review:
     types: [submitted]
+  push:
 
 jobs:
   notify:
@@ -12,9 +13,9 @@ jobs:
     steps:
       - name: Send slack notifications to requested reviewers
         id: pr-slack-notify
-        uses: mlg87/pr-reviewer-slack-notify-action@v3.0.19
+        uses: mlg87/pr-reviewer-slack-notify-action@v3.1.4
         with:
           bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel-id: "G01922M7EG4"
           github-token: ${{ secrets.GH_TOKEN }}
-          slack-users: '[{ "github_username": "mlg87", "slack_id": "UM5ES016W" }, { "github_username": "blakeworsley", "slack_id": "UHE4AUCFN" }, { "github_username": "roblg35", "slack_id": "U014A6L4J5N" }, { "github_username": "staciewilhelm", "slack_id": "UMK3ZJMLN" }, { "github_username": "tessaleemorse", "slack_id": "UTVB80JVC" }, { "github_username": "edbarnesG", "slack_id": "U87SMBL9Y" }, { "github_username": "radean0909", "slack_id": "U013SGN5MA8" }]'
+          slack-users: '[{ "github_username": "masonguild", "slack_id": "123" },{ "github_username": "mlg87", "slack_id": "UM5ES016W" }, { "github_username": "blakeworsley", "slack_id": "UHE4AUCFN" }, { "github_username": "roblg35", "slack_id": "U014A6L4J5N" }, { "github_username": "staciewilhelm", "slack_id": "UMK3ZJMLN" }, { "github_username": "tessaleemorse", "slack_id": "UTVB80JVC" }, { "github_username": "edbarnesG", "slack_id": "U87SMBL9Y" }, { "github_username": "radean0909", "slack_id": "U013SGN5MA8" }]'

@@ -4,6 +4,7 @@ on:
     types: [opened, ready_for_review]
   pull_request_review:
     types: [submitted]
+  push:
 
 jobs:
   notify:
